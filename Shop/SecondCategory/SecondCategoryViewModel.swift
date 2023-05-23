@@ -12,7 +12,6 @@ struct SecondCategory {
 
 class SecondCategoryViewModel {
     var tags = [Tags]()
-    
 
     
     var successCallBack: (()->())?

@@ -11,8 +11,7 @@ struct Items {
     let items: [Product]
 }
 
-class HomeViewModel{
-    var items = [Product]()
+class HomeViewModel {
     
     var categories = [Categories]()
     
@@ -30,14 +29,5 @@ class HomeViewModel{
         }
     }
     
-    func getProductItems() {
-        HomeNetworkManager.shared.getProductItems(category: .products) { items, errorMessage in
-            if let errorMessage = errorMessage {
-                self.errorCallBack?(errorMessage)
-            } else if let items = items {
-//                self.items = items
-                self.successCallBack?()
-            }
-        }
-    }
+
 }
