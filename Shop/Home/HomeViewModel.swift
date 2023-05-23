@@ -14,21 +14,30 @@ struct Items {
 class HomeViewModel{
     var items = [Product]()
     
+    var categories = [Categories]()
+    
     var successCallBack: (()->())?
     var errorCallBack: ((String)->())?
     
     func getItems() {
-        HomeNetworkManager.shared.getProductItems(category: .products) { items, errorMessage in
+        HomeNetworkManager.shared.getProductCategories { categories, errorMessage in
             if let errorMessage = errorMessage {
                 self.errorCallBack?(errorMessage)
-            } else if let items = items {
-                self.items = items
+            } else if let items = categories {
+                self.categories = items
                 self.successCallBack?()
             }
         }
     }
     
     func getProductItems() {
-        
+        HomeNetworkManager.shared.getProductItems(category: .products) { items, errorMessage in
+            if let errorMessage = errorMessage {
+                self.errorCallBack?(errorMessage)
+            } else if let items = items {
+//                self.items = items
+                self.successCallBack?()
+            }
+        }
     }
 }

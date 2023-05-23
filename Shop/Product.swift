@@ -5,12 +5,12 @@ struct Product: Codable, HomeCellProtocol {
     let id: Int?
     let name, slug: String?
     let permalink: String?
-    let dateCreated, dateCreatedGmt: DateCreated?
+    let dateCreated, dateCreatedGmt: String?
     let dateModified, dateModifiedGmt: String?
-    let type: TypeEnum?
-    let status: Status?
+    let type: String?
+    let status: String?
     let featured: Bool?
-    let catalogVisibility: CatalogVisibility?
+    let catalogVisibility: String?
     let description, shortDescription, sku, price: String?
     let regularPrice, salePrice: String?
 //    let dateOnSaleFrom, dateOnSaleFromGmt, dateOnSaleTo, dateOnSaleToGmt: JSONNull?
@@ -20,12 +20,12 @@ struct Product: Codable, HomeCellProtocol {
     let downloads: [Download]?
     let downloadLimit, downloadExpiry: Int?
     let externalURL: String?
-    let buttonText: ButtonText?
-    let taxStatus: TaxStatus?
+    let buttonText: String?
+    let taxStatus: String?
     let taxClass: String?
     let manageStock: Bool?
 //    let stockQuantity: JSONNull?
-    let backorders: Backorders?
+    let backorders: String?
     let backordersAllowed, backordered: Bool?
 //    let lowStockAmount: JSONNull?
     let soldIndividually: Bool?
@@ -40,7 +40,7 @@ struct Product: Codable, HomeCellProtocol {
 //    let upsellIDS, crossSellIDS: [JSONAny]?
     let parentID: Int?
     let purchaseNote: String?
-    let categories: [Category]?
+    let categories: [ProductCategory]?
 //    let tags: [JSONAny]?
     let images: [Image]?
     let attributes: [Attribute]?
@@ -49,8 +49,7 @@ struct Product: Codable, HomeCellProtocol {
     let menuOrder: Int?
     let priceHTML: String?
     let relatedIDS: [Int]?
-    let metaData: [MetaDatum]?
-    let stockStatus: StockStatus?
+    let stockStatus: String?
     let hasOptions: Bool?
     let links: Links?
     
@@ -116,7 +115,6 @@ struct Product: Codable, HomeCellProtocol {
         case menuOrder
         case priceHTML
         case relatedIDS
-        case metaData
         case stockStatus
         case hasOptions
         case links
@@ -132,29 +130,10 @@ struct Attribute: Codable {
     let options: [String]?
 }
 
-enum Backorders: String, Codable {
-    case no = "no"
-}
-
-enum ButtonText: String, Codable {
-    case buyOnTheWordPressSwagStore = "Buy on the WordPress swag store!"
-    case empty = ""
-}
-
-enum CatalogVisibility: String, Codable {
-    case hidden = "hidden"
-    case visible = "visible"
-}
-
-// MARK: - Category
-struct Category: Codable {
+// MARK: - ProductCategory
+struct ProductCategory: Codable {
     let id: Int?
     let name, slug: String?
-}
-
-enum DateCreated: String, Codable {
-    case the20230513T130654 = "2023-05-13T13:06:54"
-    case the20230513T130655 = "2023-05-13T13:06:55"
 }
 
 // MARK: - Dimensions
@@ -198,33 +177,4 @@ struct Links: Codable {
 // MARK: - Collection
 struct Collection: Codable {
     let href: String?
-}
-
-// MARK: - MetaDatum
-struct MetaDatum: Codable {
-    let id: Int?
-    let key: Key?
-    let value: String?
-}
-
-enum Key: String, Codable {
-    case wpcomIsMarkdown = "_wpcom_is_markdown"
-}
-
-enum Status: String, Codable {
-    case publish = "publish"
-}
-
-enum StockStatus: String, Codable {
-    case instock = "instock"
-}
-
-enum TaxStatus: String, Codable {
-    case taxable = "taxable"
-}
-
-enum TypeEnum: String, Codable {
-    case external = "external"
-    case grouped = "grouped"
-    case simple = "simple"
 }

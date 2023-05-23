@@ -36,18 +36,30 @@ class HomeViewController: UIViewController {
         }
     }
     func configUI() {
-       collection.reloadData()
+        collection.reloadData()
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.items.count
+        viewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
-        cell.configure(data: viewModel.items[indexPath.item])
+        cell.configure(data: viewModel.categories[indexPath.item])
+        //cell.backgroundColor = .red
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collection.frame.width, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SecondCategoryViewController.self)") as! SecondCategoryViewController
+//        viewModel.categories[indexPath.item]
+        navigationController?.show(controller, sender: nil)
+    }
+    
 }
