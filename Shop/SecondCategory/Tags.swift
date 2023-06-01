@@ -14,12 +14,20 @@ import Foundation
 import Foundation
 
 // MARK: - WelcomeElement
-struct Tags: Codable {
+struct Tags: Codable, SecondCategoryCellProtocol{
+    var btn: String {
+        btn ?? ""
+    }
+    
+    var label: String {
+        label ?? ""
+    }
+    
     let id: Int?
     let name, slug, description: String?
     let count: Int?
     let links: TagLinks?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, name, slug, description, count
         case links
@@ -29,7 +37,7 @@ struct Tags: Codable {
 // MARK: - Links
 struct TagLinks: Codable {
     let linksSelf, collection: [TagsCollection]?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf
         case collection
