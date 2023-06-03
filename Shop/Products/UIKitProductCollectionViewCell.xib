@@ -10,26 +10,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UIKitProductCollectionViewCell" id="gTV-IL-0wX" customClass="UIKitProductCollectionViewCell" customModule="Shop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="299" height="387"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="299" height="387"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-L7-S0S">
-                        <rect key="frame" x="8" y="8" width="283" height="240"/>
+                        <rect key="frame" x="8" y="8" width="284" height="180"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="240" id="1t0-vm-K3f"/>
+                            <constraint firstAttribute="height" constant="180" id="1t0-vm-K3f"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP9-IQ-oMk">
-                        <rect key="frame" x="8" y="264" width="283" height="21"/>
+                        <rect key="frame" x="8" y="204" width="284" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRG-dh-4RW">
-                        <rect key="frame" x="8" y="301" width="283" height="21"/>
+                        <rect key="frame" x="8" y="241" width="284" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,13 +49,13 @@
                 <constraint firstAttribute="trailing" secondItem="Xjs-L7-S0S" secondAttribute="trailing" constant="8" id="v0c-IV-raR"/>
                 <constraint firstAttribute="trailing" secondItem="SP9-IQ-oMk" secondAttribute="trailing" constant="8" id="vk8-C8-VEA"/>
             </constraints>
-            <size key="customSize" width="299" height="387"/>
+            <size key="customSize" width="299" height="282"/>
             <connections>
                 <outlet property="img" destination="Xjs-L7-S0S" id="79f-Dk-qWj"/>
                 <outlet property="itemName" destination="SP9-IQ-oMk" id="EmW-3K-Wc0"/>
                 <outlet property="regularPriceText" destination="JRG-dh-4RW" id="hmx-bx-tBQ"/>
             </connections>
-            <point key="canvasLocation" x="300" y="138.38028169014086"/>
+            <point key="canvasLocation" x="-280.15267175572518" y="-7.042253521126761"/>
         </collectionViewCell>
     </objects>
 </document>

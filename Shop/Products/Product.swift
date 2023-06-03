@@ -66,7 +66,7 @@ struct Product: Codable, UIKitProductCellProtocol {
     }
     
     var regularPriceText: String {
-        regularPrice ?? ""
+        price ?? ""
     }
     
     var img: String {

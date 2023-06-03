@@ -14,7 +14,7 @@ class UIKitHeaderCollectionReusableView: UICollectionReusableView {
         let label = UILabel()
         label.text = "Header"
         label.textAlignment = .center
-        label.textColor = .white
+        //label.textColor = .white
         return label
     }()
     

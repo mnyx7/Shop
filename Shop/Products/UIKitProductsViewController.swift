@@ -18,8 +18,9 @@ class UIKitProductsViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
-        collection.backgroundColor = .blue
+        //collection.backgroundColor = .blue
         collection.translatesAutoresizingMaskIntoConstraints = false
+        
         collection.register(UIKitProductCollectionViewCell.nib(),
                             forCellWithReuseIdentifier: UIKitProductCollectionViewCell.identifier)
         collection.register(UIKitHeaderCollectionReusableView.self,
@@ -68,7 +69,7 @@ extension UIKitProductsViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UIKitProductCollectionViewCell", for:  indexPath) as! UIKitProductCollectionViewCell
         cell.configure(data: viewModel.products[indexPath.item])
-        cell.backgroundColor = .orange
+        //cell.backgroundColor = .orange
         return cell
     }
     
@@ -77,12 +78,13 @@ extension UIKitProductsViewController: UICollectionViewDelegate, UICollectionVie
         //header.configure()
         return header
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 200)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width / 2 - 10, height: 200)
+        CGSize(width: collectionView.frame.width / 2 - 10, height: 280)
     }
 
 }

@@ -22,18 +22,12 @@ class UIKitProductCollectionViewCell: UICollectionViewCell {
     static let identifier = "UIKitProductCollectionViewCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "UIKitProductCollectionViewCell", bundle: nil)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = .link
-        
+        return UINib(nibName: identifier, bundle: nil)
     }
     
     func configure(data: UIKitProductCellProtocol) {
         itemName.text = data.itemName
-        regularPriceText.text = data.regularPriceText
+        regularPriceText.text = "\(data.regularPriceText) ₼"
         img.loadUrl(data.img)
     }
     
