@@ -13,7 +13,7 @@ class UIKitProductsViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = .zero
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        layout.itemSize = CGSize(width: view.frame.size.width/2.2, height: view.frame.size.width/2.2)
+        //        layout.itemSize = CGSize(width: view.frame.size.width/2.2, height: view.frame.size.width/2.2)
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
@@ -28,8 +28,8 @@ class UIKitProductsViewController: UIViewController {
         return collection
     }()
     
-    private var viewModel = SecondCategoryViewModel()
-
+    private var viewModel = ProductsViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class UIKitProductsViewController: UIViewController {
     }
     
     func configViewModel() {
-        viewModel.getTags()
+        viewModel.getProductItems()
         viewModel.successCallBack = {
             self.collectionView.reloadData()
         }
@@ -62,26 +62,31 @@ class UIKitProductsViewController: UIViewController {
 }
 extension UIKitProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.tags.count
+        viewModel.products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UIKitProductCollectionViewCell", for:  indexPath) as! UIKitProductCollectionViewCell
-//         cell.configure(data: viewModel.tags[indexPath.item] as! UIKitProductCellProtocol)
+        cell.configure(data: viewModel.products[indexPath.item])
         cell.backgroundColor = .orange
-         return cell
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: UIKitHeaderCollectionReusableView.identifier, for: indexPath) as! UIKitHeaderCollectionReusableView
-       //header.configure()
-         return header
+        //header.configure()
+        return header
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 200)
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: view.frame.size.width, height: 200)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        CGSize(width: collectionView.frame.width, height: 200)
+//    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 200)
+        let width = collectionView.frame.width / 2 - 10
+        let height = collectionView.frame.height * 270 / 812
+        return CGSize(width: width, height: height)
     }
 }

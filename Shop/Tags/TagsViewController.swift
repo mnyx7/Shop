@@ -17,14 +17,11 @@ class SecondCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        configViewModel()
-        configUI()
         
+        configUI()
+        configViewModel()
     }
-    override func viewDidLayoutSubviews() {
-        table.register(UINib(nibName: "leftLabelRightIconTableViewCell", bundle: nil), forCellReuseIdentifier: "leftLabelRightIconTableViewCell")
-    }
+    
     func configViewModel() {
         viewModel.getTags()
         viewModel.successCallBack = {
@@ -34,8 +31,9 @@ class SecondCategoryViewController: UIViewController {
             //error message or alert
         }
     }
+    
     func configUI() {
-        table.reloadData()
+        table.register(UINib(nibName: "leftLabelRightIconTableViewCell", bundle: nil), forCellReuseIdentifier: "leftLabelRightIconTableViewCell")
     }
 }
 
@@ -43,12 +41,11 @@ extension SecondCategoryViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.tags.count
-    
-}
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let xibCell = table.dequeueReusableCell(withIdentifier: "leftLabelRightIconTableViewCell", for: indexPath) as! leftLabelRightIconTableViewCell
-        xibCell.configure(data: viewModel.tags[indexPath.item] as! SecondCategoryCellProtocol)
+        xibCell.configure(data: viewModel.tags[indexPath.item])
         return xibCell
     }
 }

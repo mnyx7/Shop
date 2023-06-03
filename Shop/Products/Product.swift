@@ -1,7 +1,8 @@
 import Foundation
 
 // MARK: - WelcomeElement
-struct Product: Codable, HomeCellProtocol {
+struct Product: Codable, UIKitProductCellProtocol {
+    
     let id: Int?
     let name, slug: String?
     let permalink: String?
@@ -59,6 +60,17 @@ struct Product: Codable, HomeCellProtocol {
     
     var titleText: String {
         name ?? ""
+    }
+    var itemName: String {
+        name ?? ""
+    }
+    
+    var regularPriceText: String {
+        regularPrice ?? ""
+    }
+    
+    var img: String {
+        images?.first?.src ?? ""
     }
     
     enum CodingKeys: String, CodingKey {

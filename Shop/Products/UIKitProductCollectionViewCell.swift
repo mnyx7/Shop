@@ -8,16 +8,17 @@
 import UIKit
 
 protocol UIKitProductCellProtocol {
-    var label: String {get}
-    var price: String {get}
+    var itemName: String {get}
+    var regularPriceText: String {get}
     var img: String {get}
 }
 
 class UIKitProductCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var price: UILabel!
     
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var regularPriceText: UILabel!
+    @IBOutlet weak var itemName: UILabel!
+ 
     static let identifier = "UIKitProductCollectionViewCell"
     
     static func nib() -> UINib {
@@ -31,8 +32,8 @@ class UIKitProductCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(data: UIKitProductCellProtocol) {
-        label.text = data.label
-        price.text = data.price
+        itemName.text = data.itemName
+        regularPriceText.text = data.regularPriceText
         img.loadUrl(data.img)
     }
     

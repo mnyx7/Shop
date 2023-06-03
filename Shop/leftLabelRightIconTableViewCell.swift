@@ -8,13 +8,11 @@
 import UIKit
 
 protocol SecondCategoryCellProtocol {
-    var btn: String { get }
     var label: String { get }
 }
 
 class leftLabelRightIconTableViewCell: UITableViewCell {
 
-    @IBOutlet var btn: [UIButton]!
     @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {

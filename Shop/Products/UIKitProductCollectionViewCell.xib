@@ -51,9 +51,9 @@
             </constraints>
             <size key="customSize" width="299" height="387"/>
             <connections>
-                <outlet property="img" destination="Xjs-L7-S0S" id="RUL-Pp-Rpr"/>
-                <outlet property="label" destination="SP9-IQ-oMk" id="cQE-qf-Ju3"/>
-                <outlet property="price" destination="JRG-dh-4RW" id="77A-TU-q8Y"/>
+                <outlet property="img" destination="Xjs-L7-S0S" id="79f-Dk-qWj"/>
+                <outlet property="itemName" destination="SP9-IQ-oMk" id="EmW-3K-Wc0"/>
+                <outlet property="regularPriceText" destination="JRG-dh-4RW" id="hmx-bx-tBQ"/>
             </connections>
             <point key="canvasLocation" x="300" y="138.38028169014086"/>
         </collectionViewCell>

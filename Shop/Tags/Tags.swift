@@ -15,12 +15,10 @@ import Foundation
 
 // MARK: - WelcomeElement
 struct Tags: Codable, SecondCategoryCellProtocol{
-    var btn: String {
-        btn ?? ""
-    }
+    
     
     var label: String {
-        label ?? ""
+        name ?? ""
     }
     
     let id: Int?
