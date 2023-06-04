@@ -135,7 +135,6 @@
 			children = (
 				65CCEA422A22924F00812A73 /* UIKitHeaderCollectionReusableView.swift */,
 				658696532A1D13360062779F /* ProductsViewModel.swift */,
-				658696582A1D1EDF0062779F /* ProductsViewController.swift */,
 				65CCEA3C2A22898D00812A73 /* UIKitProductsViewController.swift */,
 				65CCEA3E2A228CD200812A73 /* UIKitProductCollectionViewCell.swift */,
 				65CCEA3F2A228CD200812A73 /* UIKitProductCollectionViewCell.xib */,
@@ -235,6 +234,7 @@
 		65DB8E782A2B0C5A00CEF428 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				658696582A1D1EDF0062779F /* ProductsViewController.swift */,
 				6586965C2A1D20010062779F /* ProductsViewCell.swift */,
 				6586965D2A1D20010062779F /* ProductsViewCell.xib */,
 			);

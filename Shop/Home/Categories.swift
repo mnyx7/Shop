@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - WelcomeElement
 struct Categories: Codable, HomeCellProtocol {
-    var titleText: String {
+    var categoryName: String {
         name ?? ""
     }
     

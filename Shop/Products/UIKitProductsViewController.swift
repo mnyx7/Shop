@@ -80,11 +80,11 @@ extension UIKitProductsViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 200)
+        return CGSize(width: view.frame.size.width, height: 80)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width / 2 - 10, height: 280)
+        CGSize(width: collectionView.frame.width / 2 - 5, height: 280)
     }
 
 }
