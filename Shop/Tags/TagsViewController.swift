@@ -45,7 +45,7 @@ extension SecondCategoryViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let xibCell = table.dequeueReusableCell(withIdentifier: "leftLabelRightIconTableViewCell", for: indexPath) as! leftLabelRightIconTableViewCell
-        xibCell.configure(data: viewModel.tags[indexPath.item])
+        xibCell.configure(data: viewModel.tags[indexPath.item] as! SecondCategoryCellProtocol)
         return xibCell
     }
 }

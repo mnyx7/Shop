@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating {
     let searchController = UISearchController(searchResultsController: SearchResult())
     
     var productItems = [Items]()
+    var categoriesList = [Categories]()
     let homeCell = "\(HomeCell.self)"
     private var viewModel = HomeViewModel()
     
@@ -75,6 +76,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SecondCategoryViewController.self)") as! SecondCategoryViewController
         //        viewModel.categories[indexPath.item]
         let controller = UIKitProductsViewController()
+        //controller.productList = categoriesList[indexPath.item].id ?? []
         navigationController?.show(controller, sender: nil)
     }
     

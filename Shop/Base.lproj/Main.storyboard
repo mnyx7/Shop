@@ -208,10 +208,25 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
-        <!--Register View Controller-->
+        <!--View Controller-->
+        <scene sceneID="8UR-uL-evj">
+            <objects>
+                <viewController id="Iyd-lJ-Jl1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7N-sr-ilb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jQj-wk-4uD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGZ-xP-rWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2003" y="1488"/>
+        </scene>
+        <!--Login View Controller.swift-->
         <scene sceneID="za2-Iv-evw">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8AH-SB-1qr" customClass="RegisterViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController.swift" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8AH-SB-1qr" customClass="LoginViewController.swift" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qrq-yR-RF4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,68 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzP-iw-bAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="741.54929577464793"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="LE4-dm-yZ2">
-            <objects>
-                <viewController id="Bv1-bX-gQE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tee-nc-aYg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="a3j-Kq-2rE">
-                                <rect key="frame" x="29" y="284" width="335" height="309"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL8-d5-5Qv">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="95"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Sign in">
-                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="signIn:" destination="8AH-SB-1qr" eventType="touchUpInside" id="N3h-2h-rDR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufc-xw-H1t">
-                                        <rect key="frame" x="0.0" y="107" width="335" height="95"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Sign in">
-                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="signIn:" destination="8AH-SB-1qr" eventType="touchUpInside" id="jQm-Pk-5pT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmP-eK-2Ec">
-                                        <rect key="frame" x="0.0" y="214" width="335" height="95"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Sign in">
-                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="signIn:" destination="8AH-SB-1qr" eventType="touchUpInside" id="tZ8-3g-naH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="r5Z-dD-RY4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="a3j-Kq-2rE" firstAttribute="leading" secondItem="r5Z-dD-RY4" secondAttribute="leading" constant="29" id="2DG-KB-8Ou"/>
-                            <constraint firstItem="a3j-Kq-2rE" firstAttribute="top" secondItem="r5Z-dD-RY4" secondAttribute="top" constant="225" id="2n0-qu-fWN"/>
-                            <constraint firstItem="a3j-Kq-2rE" firstAttribute="centerX" secondItem="r5Z-dD-RY4" secondAttribute="centerX" id="K6T-Re-5cl"/>
-                            <constraint firstItem="a3j-Kq-2rE" firstAttribute="centerY" secondItem="r5Z-dD-RY4" secondAttribute="centerY" id="Nge-UM-nYH"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qho-BL-Zvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2616.030534351145" y="741.54929577464793"/>
+            <point key="canvasLocation" x="1900" y="2206"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Htx-u4-JpF">
@@ -375,7 +329,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lY3-JG-JTH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="742"/>
+            <point key="canvasLocation" x="972" y="2206"/>
         </scene>
         <!--Offers-->
         <scene sceneID="UKe-vP-DQb">
@@ -396,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvh-zR-yKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="1463"/>
+            <point key="canvasLocation" x="1024" y="742"/>
         </scene>
         <!--Second Category View Controller-->
         <scene sceneID="M5l-XY-0PH">
@@ -431,13 +385,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oaz-xu-3GB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="1463"/>
+            <point key="canvasLocation" x="1952" y="742"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="eFJ-zR-y9A">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kmL-dZ-Qfy" customClass="RegisterViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cqM-W2-iwO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-5A-S81">
+                                <rect key="frame" x="8" y="343" width="377" height="167"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYF-Pd-ynI">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="50.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign up with Apple">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerApple:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="9ax-Kf-iY1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxi-iB-b8D">
+                                        <rect key="frame" x="0.0" y="58.333333333333314" width="377" height="50.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign up with Gmail">
+                                            <color key="baseBackgroundColor" name="gmail"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerGoogle:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="Rhq-xZ-MN2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVA-Gt-XkB">
+                                        <rect key="frame" x="0.0" y="116.66666666666667" width="377" height="50.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign up with Facebook">
+                                            <color key="baseBackgroundColor" name="facebook"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerFacebook:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="Tvf-Kv-S38"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sn2-Q6-o65"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sn2-Q6-o65" firstAttribute="bottom" secondItem="cSH-5A-S81" secondAttribute="bottom" constant="308" id="lTM-Mv-edO"/>
+                            <constraint firstItem="cSH-5A-S81" firstAttribute="top" secondItem="Sn2-Q6-o65" secondAttribute="top" constant="284" id="qX7-ad-S29"/>
+                            <constraint firstItem="cSH-5A-S81" firstAttribute="leading" secondItem="Sn2-Q6-o65" secondAttribute="leading" constant="8" id="qYL-el-w8W"/>
+                            <constraint firstItem="Sn2-Q6-o65" firstAttribute="trailing" secondItem="cSH-5A-S81" secondAttribute="trailing" constant="8" id="y78-H1-UDw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="registerApple" destination="Hxi-iB-b8D" id="kZm-KC-BV7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aT2-Ht-VX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="2206"/>
         </scene>
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="percent" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="facebook">
+            <color red="0.066666666666666666" green="0.47058823529411764" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gmail">
+            <color red="0.73333333333333328" green="0.0" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -14,6 +14,7 @@ struct Products {
 
 class ProductsViewModel {
     var products = [Product]()
+    var tags = [Tags]()
     
     var successCallBack: (()->())?
     var errorCallBack: ((String)->())?
@@ -28,4 +29,16 @@ class ProductsViewModel {
             }
         }
     }
+    
+    func getTags() {
+        TagsNetworkManager.shared.getItemTags { tags, errorMessage in
+            if let errorMessage = errorMessage {
+                self.errorCallBack?(errorMessage)
+            } else if let tags = tags {
+                self.tags = tags
+                self.successCallBack?()
+            }
+        }
+    }
+    
 }

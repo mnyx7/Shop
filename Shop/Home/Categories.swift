@@ -10,6 +10,7 @@ struct Categories: Codable, HomeCellProtocol {
     var categoryName: String {
         name ?? ""
     }
+  
     
     var imageUrl: String {
         image?.src ?? ""

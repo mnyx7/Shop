@@ -8,6 +8,8 @@
 import UIKit
 
 class UIKitProductsViewController: UIViewController {
+    var productList = [Products]()
+
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -52,6 +54,7 @@ class UIKitProductsViewController: UIViewController {
     
     func configViewModel() {
         viewModel.getProductItems()
+        viewModel.getTags()
         viewModel.successCallBack = {
             self.collectionView.reloadData()
         }
@@ -75,7 +78,7 @@ extension UIKitProductsViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: UIKitHeaderCollectionReusableView.identifier, for: indexPath) as! UIKitHeaderCollectionReusableView
-        //header.configure()
+        header.configure(data: viewModel.tags)
         return header
     }
     
