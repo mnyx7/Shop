@@ -9,13 +9,16 @@ import UIKit
 
 class ProductSearchViewController: UIViewController {
     var productList = [Products]()
+    @IBOutlet weak var searchField: UITextField!
+    var searchModel = SearchViewModel()
+    private let cellId = "\(UIKitProductCollectionViewCell.self)"
     
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = .zero
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 90, left: 0, bottom: 0, right: 0)
         //        layout.itemSize = CGSize(width: view.frame.size.width/2.2, height: view.frame.size.width/2.2)
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -34,12 +37,15 @@ class ProductSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Search"
         view.backgroundColor = .white
         configureConstraint()
         configViewModel()
+        configreUI()
     }
-    
+    func configreUI() {
+        collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
+    }
     fileprivate func configureConstraint() {
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -58,6 +64,12 @@ class ProductSearchViewController: UIViewController {
         viewModel.errorCallBack = { message in
             //error message or alert
         }
+      
+    }
+    @IBAction func searchField(_ sender: Any) {
+        if !(searchField.text?.isEmpty ?? false) {
+            searchModel.getSearch(text: searchField.text ?? "")
+        }
     }
     
 }
@@ -75,11 +87,21 @@ extension ProductSearchViewController: UICollectionViewDelegate, UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 80)
+        return CGSize(width: view.frame.size.width, height: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width / 2 - 5, height: 280)
     }
     
+}
+extension ProductSearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text?.isEmpty ?? false {
+            searchModel.resetDatas()
+            collectionView.reloadData()
+        }
+        textField.resignFirstResponder()
+        return true
+    }
 }

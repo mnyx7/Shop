@@ -17,7 +17,6 @@
 		6576D62F2A2CDD020074A040 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576D62E2A2CDD020074A040 /* RegisterViewController.swift */; };
 		6577FDFA2A2F95FF0071E537 /* FiltersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FDF82A2F95FF0071E537 /* FiltersCollectionViewCell.swift */; };
 		6577FDFB2A2F95FF0071E537 /* FiltersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6577FDF92A2F95FF0071E537 /* FiltersCollectionViewCell.xib */; };
-		6577FDFE2A3041FC0071E537 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FDFD2A3041FC0071E537 /* SearchViewController.swift */; };
 		6577FE002A3043070071E537 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FDFF2A3043070071E537 /* SearchViewModel.swift */; };
 		6577FE052A30443C0071E537 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FE042A30443C0071E537 /* SearchManager.swift */; };
 		6577FE072A3044600071E537 /* SearchHelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FE062A3044600071E537 /* SearchHelperManager.swift */; };
@@ -66,7 +65,6 @@
 		6576D62E2A2CDD020074A040 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6577FDF82A2F95FF0071E537 /* FiltersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewCell.swift; sourceTree = "<group>"; };
 		6577FDF92A2F95FF0071E537 /* FiltersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersCollectionViewCell.xib; sourceTree = "<group>"; };
-		6577FDFD2A3041FC0071E537 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6577FDFF2A3043070071E537 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		6577FE042A30443C0071E537 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		6577FE062A3044600071E537 /* SearchHelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHelperManager.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				65E9EECC2A334E3F00B1585B /* ProductSearchViewController.swift */,
-				6577FDFD2A3041FC0071E537 /* SearchViewController.swift */,
 				6577FDFF2A3043070071E537 /* SearchViewModel.swift */,
 				6577FE092A3093480071E537 /* SearchModel.swift */,
 			);
@@ -171,10 +168,10 @@
 		6586964E2A1D12810062779F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				658696532A1D13360062779F /* ProductsViewModel.swift */,
 				65CCEA3C2A22898D00812A73 /* UIKitProductsViewController.swift */,
 				65CCEA3E2A228CD200812A73 /* UIKitProductCollectionViewCell.swift */,
 				65CCEA3F2A228CD200812A73 /* UIKitProductCollectionViewCell.xib */,
+				658696532A1D13360062779F /* ProductsViewModel.swift */,
 				6589C43C2A128D6F007489FB /* Product.swift */,
 				65CCEA422A22924F00812A73 /* UIKitHeaderCollectionReusableView.swift */,
 				6577FDF82A2F95FF0071E537 /* FiltersCollectionViewCell.swift */,
@@ -249,8 +246,8 @@
 				6589C4402A1290F1007489FB /* NetworkManager */,
 				6589C4452A1291BD007489FB /* Helper */,
 				65D20A9D2A1286D8008FA6F3 /* Home */,
-				6577FDFC2A3041360071E537 /* Search */,
 				652B10132A18B909005192F6 /* Tags */,
+				6577FDFC2A3041360071E537 /* Search */,
 				6586964E2A1D12810062779F /* Products */,
 				658696552A1D19FE0062779F /* Register */,
 				65C2F5292A12365C001E9809 /* Main.storyboard */,
@@ -430,7 +427,6 @@
 				65CCEA3D2A22898D00812A73 /* UIKitProductsViewController.swift in Sources */,
 				6589C4442A12914C007489FB /* HelperNetworkManager.swift in Sources */,
 				6586965E2A1D20010062779F /* ProductsViewCell.swift in Sources */,
-				6577FDFE2A3041FC0071E537 /* SearchViewController.swift in Sources */,
 				6586964C2A1D12580062779F /* ProductsNetworkManager.swift in Sources */,
 				6577FDFA2A2F95FF0071E537 /* FiltersCollectionViewCell.swift in Sources */,
 				6589C4472A1291DE007489FB /* UIImageView + Extension.swift in Sources */,

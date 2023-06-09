@@ -209,21 +209,52 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
-        <!--Search View Controller-->
-        <scene sceneID="8UR-uL-evj">
+        <!--Product Search View Controller-->
+        <scene sceneID="rkK-97-lCo">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iyd-lJ-Jl1" customClass="SearchViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d7N-sr-ilb">
+                <viewController id="Hi1-RN-l37" customClass="ProductSearchViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MEu-Bh-fHy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jQj-wk-4uD"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiP-U4-2bZ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GlE-BO-Thd">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Hi1-RN-l37" id="Lg4-yu-KAe"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="GlE-BO-Thd" secondAttribute="bottom" id="04d-Py-Dhn"/>
+                                    <constraint firstItem="GlE-BO-Thd" firstAttribute="leading" secondItem="OiP-U4-2bZ" secondAttribute="leading" id="LoY-qj-jks"/>
+                                    <constraint firstItem="GlE-BO-Thd" firstAttribute="top" secondItem="OiP-U4-2bZ" secondAttribute="top" id="N9O-vd-ZlE"/>
+                                    <constraint firstAttribute="height" constant="80" id="adx-cq-PBh"/>
+                                    <constraint firstAttribute="trailing" secondItem="GlE-BO-Thd" secondAttribute="trailing" id="bRk-YT-90a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B3y-lM-fEa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OiP-U4-2bZ" firstAttribute="top" secondItem="B3y-lM-fEa" secondAttribute="top" id="l3c-4L-VbW"/>
+                            <constraint firstItem="OiP-U4-2bZ" firstAttribute="leading" secondItem="B3y-lM-fEa" secondAttribute="leading" id="ucI-tf-Oqc"/>
+                            <constraint firstItem="B3y-lM-fEa" firstAttribute="trailing" secondItem="OiP-U4-2bZ" secondAttribute="trailing" id="vp1-jO-5LA"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FSf-ZQ-vYM"/>
+                    <navigationItem key="navigationItem" id="ggB-f3-LIt"/>
+                    <connections>
+                        <outlet property="searchField" destination="GlE-BO-Thd" id="gPE-mv-OUE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nGZ-xP-rWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWf-w8-EDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047" y="1488"/>
+            <point key="canvasLocation" x="2059" y="1487"/>
         </scene>
         <!--Login View Controller.swift-->
         <scene sceneID="za2-Iv-evw">
@@ -464,7 +495,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Iyd-lJ-Jl1" kind="relationship" relationship="rootViewController" id="XDc-pg-6NH"/>
+                        <segue destination="Hi1-RN-l37" kind="relationship" relationship="rootViewController" id="Lxj-CI-tk0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OC9-Yo-Zds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
