@@ -6,10 +6,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UISearchResultsUpdating {
+class HomeViewController: UIViewController {
     
     @IBOutlet private weak var collection: UICollectionView!
-    let searchController = UISearchController(searchResultsController: SearchResult())
     
     var productItems = [Items]()
     var categoriesList = [Categories]()
@@ -18,8 +17,6 @@ class HomeViewController: UIViewController, UISearchResultsUpdating {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
         viewModel.getItems()
         configViewModel()
         //configUI()
@@ -41,20 +38,9 @@ class HomeViewController: UIViewController, UISearchResultsUpdating {
     func configUI() {
         collection.reloadData()
     }
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        let searchVc = searchController.searchResultsController as? SearchResult
-    }
+    
 }
 
-class SearchResult: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-}
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
