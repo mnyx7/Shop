@@ -8,12 +8,13 @@
 import Foundation
 
 class SearchManager {
-//    static let shared = SearchManager()
-//    
-//    func getSearchItems(text: String, complete: @escaping ((Search?, String?) -> ())) {
-//        NetworkManager.shared.request(model: Search.self,
-//                                      url: SearchEndpoint.search.path + "&q=\(text)",
-//                                      complete: complete)
-//        
-//    }
+    static let shared = SearchManager()
+
+    func getSearchItems(text: String, complete: @escaping (([Product]?, String?) -> ())) {
+        let url = HelperNetworkManager.shared.searchURLConfig(path: SearchEndpoint.search.rawValue, searchText: text)
+        NetworkManager.shared.request(model: [Product].self,
+                                      url: url,
+                                      complete: complete)
+        
+    }
 }

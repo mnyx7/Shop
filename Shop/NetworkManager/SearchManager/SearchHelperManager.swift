@@ -7,9 +7,5 @@
 
 import Foundation
 enum SearchEndpoint: String {
-    case search = "search/v2/articlesearch.json"
-    
-    var path: String {
-        HelperNetworkManager.shared.URLconfig(path: self.rawValue)
-    }
+    case search = "products?search"
 }

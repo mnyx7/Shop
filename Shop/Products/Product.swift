@@ -44,9 +44,9 @@ struct Product: Codable, UIKitProductCellProtocol {
     let categories: [ProductCategory]?
 //    let tags: [JSONAny]?
     let images: [Image]?
-    let attributes: [Attribute]?
+//    let attributes: [Attribute]?
 //    let defaultAttributes, variations: [JSONAny]?
-    let groupedProducts: [Int]?
+//    let groupedProducts: [Int]?
     let menuOrder: Int?
     let priceHTML: String?
     let relatedIDS: [Int]?
@@ -73,19 +73,12 @@ struct Product: Codable, UIKitProductCellProtocol {
         images?.first?.src ?? ""
     }
     
-    enum CodingKeys: String, CodingKey {
+    /*enum CodingKeys: String, CodingKey {
         case id, name, slug, permalink
-        case dateCreated
-        case dateCreatedGmt
-        case dateModified
-        case dateModifiedGmt
+        case dateCreated, dateCreatedGmt, dateModified, dateModifiedGmt
         case type, status, featured
-        case catalogVisibility
-        case description
-        case shortDescription
-        case sku, price
-        case regularPrice
-        case salePrice
+        case catalogVisibility, description, shortDescription
+        case sku, price, regularPrice, salePrice
 //        case dateOnSaleFrom
 //        case dateOnSaleFromGmt
 //        case dateOnSaleTo
@@ -119,18 +112,19 @@ struct Product: Codable, UIKitProductCellProtocol {
 //        case crossSellIDS
         case parentID
         case purchaseNote
-        case categories, images, attributes
+        case categories, images
+//        case attributes
 //        case tags
 //        case defaultAttributes
 //        case variations
-        case groupedProducts
+//        case groupedProducts
         case menuOrder
         case priceHTML
         case relatedIDS
         case stockStatus
         case hasOptions
         case links
-    }
+    }*/
 }
 
 // MARK: - Attribute

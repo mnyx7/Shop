@@ -218,13 +218,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiP-U4-2bZ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="80"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GlE-BO-Thd">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GlE-BO-Thd">
+                                        <rect key="frame" x="8" y="0.0" width="377" height="40"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
+                                            <action selector="searchField:" destination="Hi1-RN-l37" eventType="editingChanged" id="aWG-8Z-0iB"/>
                                             <outlet property="delegate" destination="Hi1-RN-l37" id="Lg4-yu-KAe"/>
                                         </connections>
                                     </textField>
@@ -232,10 +234,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="GlE-BO-Thd" secondAttribute="bottom" id="04d-Py-Dhn"/>
-                                    <constraint firstItem="GlE-BO-Thd" firstAttribute="leading" secondItem="OiP-U4-2bZ" secondAttribute="leading" id="LoY-qj-jks"/>
+                                    <constraint firstItem="GlE-BO-Thd" firstAttribute="leading" secondItem="OiP-U4-2bZ" secondAttribute="leading" constant="8" id="LoY-qj-jks"/>
                                     <constraint firstItem="GlE-BO-Thd" firstAttribute="top" secondItem="OiP-U4-2bZ" secondAttribute="top" id="N9O-vd-ZlE"/>
-                                    <constraint firstAttribute="height" constant="80" id="adx-cq-PBh"/>
-                                    <constraint firstAttribute="trailing" secondItem="GlE-BO-Thd" secondAttribute="trailing" id="bRk-YT-90a"/>
+                                    <constraint firstAttribute="height" constant="40" id="adx-cq-PBh"/>
+                                    <constraint firstAttribute="trailing" secondItem="GlE-BO-Thd" secondAttribute="trailing" constant="8" id="bRk-YT-90a"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -250,6 +252,7 @@
                     <navigationItem key="navigationItem" id="ggB-f3-LIt"/>
                     <connections>
                         <outlet property="searchField" destination="GlE-BO-Thd" id="gPE-mv-OUE"/>
+                        <outlet property="searchView" destination="OiP-U4-2bZ" id="Bqy-9J-7rQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWf-w8-EDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
