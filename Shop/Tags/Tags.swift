@@ -14,8 +14,10 @@ import Foundation
 import Foundation
 
 // MARK: - WelcomeElement
-struct Tags: Codable, FiltersProtocol {
-
+struct Tags: Codable, FiltersProtocol, SecondCategoryCellProtocol {
+    var label: String{
+        name ?? ""
+    }
     
     var filterName: String {
         name ?? ""
