@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIKitHeaderCollectionReusableView: UICollectionReusableView {
+class HeaderCollectionReusableView: UICollectionReusableView {
     
     let cellIdentifier = "\(FiltersCollectionViewCell.self)"
     static let identifier = "UIKitHeaderCollectionReusableView"
@@ -17,11 +17,15 @@ class UIKitHeaderCollectionReusableView: UICollectionReusableView {
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = .zero
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+    
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
         collection.translatesAutoresizingMaskIntoConstraints = false
+        
         collection.register(FiltersCollectionViewCell.nib(), forCellWithReuseIdentifier: cellIdentifier)
         return collection
     }()
@@ -53,18 +57,28 @@ class UIKitHeaderCollectionReusableView: UICollectionReusableView {
     }
 }
 
-extension UIKitHeaderCollectionReusableView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HeaderCollectionReusableView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         tags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FiltersCollectionViewCell", for:  indexPath) as! FiltersCollectionViewCell
-        cell.configure(data: tags[indexPath.item])        
+        cell.configure(data: tags[indexPath.item])
+        cell.backgroundColor = .gray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 220, height: 60)
+        let size: CGSize = tags[indexPath.item].filterName.sizeOfString(usingFont: .systemFont(ofSize: 14))
+        return .init(width: size.width + 50, height: 60)
+        
+    }
+}
+// ayri fayla cixar
+extension String {
+    func sizeOfString(usingFont font: UIFont) -> CGSize {
+        let fontAttribute = [NSAttributedString.Key.font: font]
+        return self.size(withAttributes:  fontAttribute)
     }
 }

@@ -12,7 +12,7 @@ class ProductSearchViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     
 //    var productList = [Products]()
-    private let cellId = "\(UIKitProductCollectionViewCell.self)"
+    private let cellId = "\(ProductCollectionViewCell.self)"
     
     
     lazy var collectionView: UICollectionView = {
@@ -28,8 +28,8 @@ class ProductSearchViewController: UIViewController {
         collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         
-        collection.register(UIKitProductCollectionViewCell.nib(),
-                            forCellWithReuseIdentifier: UIKitProductCollectionViewCell.identifier)
+        collection.register(ProductCollectionViewCell.nib(),
+                            forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         return collection
     }()
     
@@ -82,7 +82,7 @@ extension ProductSearchViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UIKitProductCollectionViewCell", for:  indexPath) as! UIKitProductCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for:  indexPath) as! ProductCollectionViewCell
         cell.configure(data: viewModel.product[indexPath.item])
         //cell.backgroundColor = .orange
         return cell

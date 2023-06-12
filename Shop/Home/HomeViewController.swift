@@ -61,7 +61,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SecondCategoryViewController.self)") as! SecondCategoryViewController
         //        viewModel.categories[indexPath.item]
-        let controller = UIKitProductsViewController()
+        let controller = ProductsViewController()
         //controller.productList = categoriesList[indexPath.item].id ?? []
         navigationController?.show(controller, sender: nil)
     }

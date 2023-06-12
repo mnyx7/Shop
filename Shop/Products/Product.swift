@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - WelcomeElement
-struct Product: Codable, UIKitProductCellProtocol {
+struct Product: Codable, ProductCellProtocol {
     
     let id: Int?
     let name, slug: String?

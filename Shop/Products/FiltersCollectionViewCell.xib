@@ -16,22 +16,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="460" height="113"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC8-Lx-vXW">
-                        <rect key="frame" x="16" y="39" width="75" height="35"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="gray" title="Button"/>
-                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g78-gz-53O">
+                        <rect key="frame" x="16" y="58.666666666666657" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="qC8-Lx-vXW" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="hr4-Ut-tlT"/>
-                <constraint firstItem="qC8-Lx-vXW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="jOA-4p-2aK"/>
+                <constraint firstItem="g78-gz-53O" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="k2l-ME-PCE"/>
+                <constraint firstItem="g78-gz-53O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="yn6-oM-W3r"/>
             </constraints>
             <size key="customSize" width="460" height="113"/>
             <connections>
-                <outlet property="filterName" destination="qC8-Lx-vXW" id="dr2-sC-o1b"/>
+                <outlet property="filterName" destination="g78-gz-53O" id="Mqd-64-Bqe"/>
             </connections>
             <point key="canvasLocation" x="442.74809160305341" y="42.605633802816904"/>
         </collectionViewCell>

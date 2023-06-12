@@ -1,0 +1,10 @@
+Target dependency graph (4 targets)
+Alamofire in Pods, no dependencies
+SDWebImage in Pods, no dependencies
+Pods-Shop in Pods, depends on:
+Alamofire in Pods (explicit)
+SDWebImage in Pods (explicit)
+Shop in Shop, depends on:
+Pods-Shop in Pods (implicit dependency via file 'Pods_Shop.framework' in build phase 'Link Binary')
+Alamofire in Pods (implicit dependency via options '-framework Alamofire' in build setting 'OTHER_LDFLAGS')
+SDWebImage in Pods (implicit dependency via options '-framework SDWebImage' in build setting 'OTHER_LDFLAGS')

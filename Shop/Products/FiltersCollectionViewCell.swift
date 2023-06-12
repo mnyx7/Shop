@@ -12,7 +12,8 @@ protocol FiltersProtocol {
 
 class FiltersCollectionViewCell: UICollectionViewCell {
  
-    @IBOutlet weak var filterName: UIButton!
+    @IBOutlet weak var filterName: UILabel!
+    //@IBOutlet weak var filterName: UIButton!
     
     
     static let identifier = "FiltersCollectionViewCell"
@@ -24,7 +25,8 @@ class FiltersCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(data: FiltersProtocol) {
-        filterName.setTitle(data.filterName, for: .normal)
+        filterName.text = data.filterName
+        //filterName.setTitle(data.filterName, for: .normal)
     }
 
 }

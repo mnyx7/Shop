@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIKitProductsViewController: UIViewController {
+class ProductsViewController: UIViewController {
     var productList = [Products]()
 
     lazy var collectionView: UICollectionView = {
@@ -23,11 +23,11 @@ class UIKitProductsViewController: UIViewController {
         //collection.backgroundColor = .blue
         collection.translatesAutoresizingMaskIntoConstraints = false
         
-        collection.register(UIKitProductCollectionViewCell.nib(),
-                            forCellWithReuseIdentifier: UIKitProductCollectionViewCell.identifier)
-        collection.register(UIKitHeaderCollectionReusableView.self,
+        collection.register(ProductCollectionViewCell.nib(),
+                            forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+        collection.register(HeaderCollectionReusableView.self,
                             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                            withReuseIdentifier: UIKitHeaderCollectionReusableView.identifier)
+                            withReuseIdentifier: HeaderCollectionReusableView.identifier)
         return collection
     }()
     
@@ -64,20 +64,20 @@ class UIKitProductsViewController: UIViewController {
     }
     
 }
-extension UIKitProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UIKitProductCollectionViewCell", for:  indexPath) as! UIKitProductCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for:  indexPath) as! ProductCollectionViewCell
         cell.configure(data: viewModel.products[indexPath.item])
         //cell.backgroundColor = .orange
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: UIKitHeaderCollectionReusableView.identifier, for: indexPath) as! UIKitHeaderCollectionReusableView
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
         header.configure(data: viewModel.tags)
         return header
     }
