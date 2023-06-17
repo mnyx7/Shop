@@ -17,6 +17,8 @@ struct Categories: Codable, HomeCellProtocol {
         //links?.linksSelf?.first?.href ?? ""
     }
     
+    var categoryProductList: [ProductAndCategoryList] = []
+    
     let id: Int?
     let name, slug: String?
     let parent: Int?

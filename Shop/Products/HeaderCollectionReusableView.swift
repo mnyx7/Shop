@@ -65,7 +65,7 @@ extension HeaderCollectionReusableView: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FiltersCollectionViewCell", for:  indexPath) as! FiltersCollectionViewCell
         cell.configure(data: tags[indexPath.item])
-        cell.backgroundColor = .gray
+        //cell.backgroundColor = .gray
         return cell
     }
     

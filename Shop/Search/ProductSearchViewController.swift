@@ -44,6 +44,7 @@ class ProductSearchViewController: UIViewController {
         configViewModel()
         configreUI()
     }
+    
     func configreUI() {
         collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
     }
@@ -72,6 +73,9 @@ class ProductSearchViewController: UIViewController {
     @IBAction func searchField(_ sender: Any) {
         if !(searchField.text?.isEmpty ?? false) {
             viewModel.getSearch(text: searchField.text ?? "")
+        } else {
+            viewModel.resetDatas()
+            collectionView.reloadData()
         }
     }
     

@@ -18,13 +18,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getItems()
-        configViewModel()
-        //configUI()
-    }
-    
-    override func viewDidLayoutSubviews() {
+        
         collection.register(UINib(nibName: homeCell, bundle: nil), forCellWithReuseIdentifier: homeCell)
+        
+        configViewModel()
+        print(self.viewModel.categoryProductList.count)
+        //configUI()
     }
     
     func configViewModel() {
@@ -36,6 +35,7 @@ class HomeViewController: UIViewController {
             //error message or alert
         }
     }
+    
     func configUI() {
         collection.reloadData()
     }
@@ -51,16 +51,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
-        cell.categoryName.text = self.viewModel.categories[indexPath.item].categoryName
-        cell.productsList = self.viewModel.categoryProductList[indexPath.item].productByCatList
+        cell.categoryName.text = viewModel.categories[indexPath.item].categoryName
+        
+//        if viewModel.categoryProductList.isEmpty {
+//            cell.productsList = viewModel.categoryProductList[indexPath.item].productByCatList
+//        }
         cell.configure(data: viewModel.categories[indexPath.item])
         //cell.backgroundColor = .red
         return cell
     }
-    
- 
-
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collection.frame.width, height: 150)
@@ -70,7 +69,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SecondCategoryViewController.self)") as! SecondCategoryViewController
         //        viewModel.categories[indexPath.item]
         let controller = ProductsViewController()
-        //controller.productList = categoriesList[indexPath.item]. ?? []
+        //controller.productList = categoriesList[indexPath.item]
         navigationController?.show(controller, sender: nil)
     }
     

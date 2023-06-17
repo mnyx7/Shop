@@ -33,7 +33,7 @@ class HomeViewModel {
                 self.errorCallBack?(errorMessage)
             } else if let items = categories {
                 self.categories = items
-
+//                self.getProductItems()
                 self.successCallBack?()
             }
         }
@@ -51,14 +51,18 @@ class HomeViewModel {
             }
         }
     }
+    
     func injectDetails(productList: [Product]) {
+        
+        
+        
         var productAndCategory: ProductAndCategoryList = ProductAndCategoryList()
         productAndCategory.name = productList.first?.categories?.first?.name ?? ""
         productAndCategory.id = productList.first?.categories?.first?.id ?? 0
         productAndCategory.slug = productList.first?.categories?.first?.slug ?? ""
         
         productAndCategory.productByCatList.append(contentsOf: productList)
-        self.categoryProductList.append(productAndCategory)
+        categoryProductList.append(productAndCategory)
         
     }
     

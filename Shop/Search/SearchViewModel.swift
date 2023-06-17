@@ -9,6 +9,8 @@ import Foundation
 
 class SearchViewModel {
     var product = [Product]()
+    var productBackup = [Product]()
+    
     var successCallBack: (()->())?
     var errorCallBack: ((String)->())?
 
@@ -19,6 +21,7 @@ class SearchViewModel {
                 self.errorCallBack?(errorMessage)
             } else if let products = products {
                 self.product = products
+                self.productBackup = products
                 self.successCallBack?()
             }
         }
@@ -37,5 +40,6 @@ class SearchViewModel {
     func resetDatas() {
   //      item = nil
         product.removeAll()
+        product = productBackup
     }
 }
