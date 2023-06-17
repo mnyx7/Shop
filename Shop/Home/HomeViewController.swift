@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     var categoriesList = [Categories]()
     let homeCell = "\(HomeCell.self)"
     private var viewModel = HomeViewModel()
+    private var productVM = ProductsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +44,23 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
+        cell.categoryName.text = self.viewModel.categories[indexPath.item].categoryName
+        cell.productsList = self.viewModel.categoryProductList[indexPath.item].productByCatList
         cell.configure(data: viewModel.categories[indexPath.item])
         //cell.backgroundColor = .red
         return cell
     }
+    
+ 
+
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collection.frame.width, height: 150)
@@ -62,7 +70,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SecondCategoryViewController.self)") as! SecondCategoryViewController
         //        viewModel.categories[indexPath.item]
         let controller = ProductsViewController()
-        //controller.productList = categoriesList[indexPath.item].id ?? []
+        //controller.productList = categoriesList[indexPath.item]. ?? []
         navigationController?.show(controller, sender: nil)
     }
     

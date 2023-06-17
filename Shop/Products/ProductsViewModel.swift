@@ -24,11 +24,15 @@ class ProductsViewModel {
             if let errorMessage = errorMessage {
                 self.errorCallBack?(errorMessage)
             } else if let products = products {
+                //self.injectDetails(productList: products)
+                
                 self.products = products
                 self.successCallBack?()
             }
         }
     }
+    
+    
     
     func getTags() {
         TagsNetworkManager.shared.getItemTags { tags, errorMessage in

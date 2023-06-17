@@ -11,6 +11,7 @@ protocol HomeCellProtocol {
     var imageUrl: String { get }
 }
 class HomeCell: UICollectionViewCell {
+    var productsList: [Product] = [Product]()
     @IBOutlet weak var img: UIImageView!
     
     @IBOutlet weak var categoryName: UILabel!

@@ -11,8 +11,17 @@ struct Items {
     let items: [Product]
 }
 
-class HomeViewModel {
+struct ProductAndCategoryList {
+    var id: Int = 0
+    var name: String = ""
+    var slug: String = ""
+    var productByCatList: [Product] = [Product]()
     
+}
+
+class HomeViewModel {
+    var categoryProductList: [ProductAndCategoryList] = [ProductAndCategoryList]()
+
     var categories = [Categories]()
     
     var successCallBack: (()->())?
@@ -24,9 +33,33 @@ class HomeViewModel {
                 self.errorCallBack?(errorMessage)
             } else if let items = categories {
                 self.categories = items
+
                 self.successCallBack?()
             }
         }
+    }
+    
+    func getProductItems() {
+        ProductsNetworkManager.shared.getProductItems(category: .products) { products, errorMessage in
+            if let errorMessage = errorMessage {
+                self.errorCallBack?(errorMessage)
+            } else if let products = products {
+                self.injectDetails(productList: products)
+
+               // self.products = products
+                self.successCallBack?()
+            }
+        }
+    }
+    func injectDetails(productList: [Product]) {
+        var productAndCategory: ProductAndCategoryList = ProductAndCategoryList()
+        productAndCategory.name = productList.first?.categories?.first?.name ?? ""
+        productAndCategory.id = productList.first?.categories?.first?.id ?? 0
+        productAndCategory.slug = productList.first?.categories?.first?.slug ?? ""
+        
+        productAndCategory.productByCatList.append(contentsOf: productList)
+        self.categoryProductList.append(productAndCategory)
+        
     }
     
 
