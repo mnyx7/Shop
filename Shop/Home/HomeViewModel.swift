@@ -20,10 +20,11 @@ struct ProductAndCategoryList {
 }
 
 class HomeViewModel {
+    
     var categoryProductList: [ProductAndCategoryList] = [ProductAndCategoryList]()
 
     var categories = [Categories]()
-    
+    var categoryRefresh: Categories?
     var successCallBack: (()->())?
     var errorCallBack: ((String)->())?
     
@@ -65,6 +66,10 @@ class HomeViewModel {
         categoryProductList.append(productAndCategory)
         
     }
-    
+    func reset() {
+        categories.removeAll()
+        categoryRefresh = nil
+//        getPopularPeople()
+    }
 
 }

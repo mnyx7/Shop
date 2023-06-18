@@ -10,6 +10,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet private weak var collection: UICollectionView!
     
+    let refreshController = UIRefreshControl()
+    
     var productItems = [Items]()
     var categoriesList = [Categories]()
     let homeCell = "\(HomeCell.self)"
@@ -18,7 +20,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureViewModel()
         collection.register(UINib(nibName: homeCell, bundle: nil), forCellWithReuseIdentifier: homeCell)
         
         configViewModel()
@@ -38,6 +40,29 @@ class HomeViewController: UIViewController {
     
     func configUI() {
         collection.reloadData()
+        
+        refreshController.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        collection.refreshControl = refreshController
+        
+    }
+    
+    func configureViewModel() {
+        refreshController.beginRefreshing()
+        viewModel.getProductItems()
+        viewModel.successCallBack = {
+            self.collection.reloadData()
+            self.refreshController.endRefreshing()
+        }
+        viewModel.errorCallBack = { message in
+            print("people error: \(message)")
+            self.refreshController.endRefreshing()
+        }
+    }
+    
+    @objc func pullToRefresh() {
+        viewModel.reset()
+        collection.reloadData()
+        viewModel.getProductItems()
     }
     
 }
@@ -53,9 +78,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         cell.categoryName.text = viewModel.categories[indexPath.item].categoryName
         
-//        if viewModel.categoryProductList.isEmpty {
-//            cell.productsList = viewModel.categoryProductList[indexPath.item].productByCatList
-//        }
+        //        if viewModel.categoryProductList.isEmpty {
+        //            cell.productsList = viewModel.categoryProductList[indexPath.item].productByCatList
+        //        }
         cell.configure(data: viewModel.categories[indexPath.item])
         //cell.backgroundColor = .red
         return cell
@@ -69,6 +94,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SecondCategoryViewController.self)") as! SecondCategoryViewController
         //        viewModel.categories[indexPath.item]
         let controller = ProductsViewController()
+        //burda filterlamaliyam id ile productlari
+        
         //controller.productList = categoriesList[indexPath.item]
         navigationController?.show(controller, sender: nil)
     }
