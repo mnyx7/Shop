@@ -1,0 +1,24 @@
+//
+//  OnboardingJson.swift
+//  Shop
+//
+//  Created by Minaya Yagubova on 08.08.23.
+//
+
+[
+  {
+    "image": "img1",
+    "title": "Welcome",
+    "text": "Welcome to our app!"
+  },
+  {
+    "image": "img2",
+  "title": "Best Products",
+  "text": "Best gift ideal."
+  },
+  {
+    "image": "img3",
+    "title": "Best prices",
+    "text": "Best experience for you."
+  }
+]

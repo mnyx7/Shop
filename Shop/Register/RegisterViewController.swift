@@ -9,13 +9,13 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBAction func registerApple(_ sender: Any) {
-    }
-    
-    @IBAction func registerGoogle(_ sender: Any) {
-    }
-    @IBAction func registerFacebook(_ sender: Any) {
-    }
+//    @IBAction func registerApple(_ sender: Any) {
+//    }
+//    
+//    @IBAction func registerGoogle(_ sender: Any) {
+//    }
+//    @IBAction func registerFacebook(_ sender: Any) {
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

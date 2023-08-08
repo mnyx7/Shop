@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ccd-1r-FUk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VYE-zY-aBD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -171,7 +171,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="y2A-6D-Z3e">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ccd-1r-FUk" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ShopMain" automaticallyAdjustsScrollViewInsets="NO" id="Ccd-1r-FUk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zQa-sP-hTc">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -203,12 +203,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hxt-xH-er0"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6Ba-2o-KrS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9YH-MN-LTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="946" y="-2"/>
         </scene>
         <!--Product Search View Controller-->
         <scene sceneID="rkK-97-lCo">
@@ -338,10 +338,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IWY-vW-YRf"/>
-                    <connections>
-                        <outlet property="email" destination="wG0-xG-MMg" id="AfL-nu-XEK"/>
-                        <outlet property="password" destination="wG0-xG-MMg" id="dEI-5A-sw3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzP-iw-bAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -509,7 +505,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="Hr0-IA-uRo">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VYE-zY-aBD" customClass="OnboardingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VYE-zY-aBD" customClass="OnboardingViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hf6-DH-SAH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,6 +599,7 @@
                             <constraint firstItem="hLT-r3-8VZ" firstAttribute="top" secondItem="OXq-iR-koz" secondAttribute="bottom" constant="24" id="uHs-NY-7mK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5hy-zY-xoG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLP-9s-vqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
