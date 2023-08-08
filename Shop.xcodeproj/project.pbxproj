@@ -29,6 +29,8 @@
 		6589C4422A1290FE007489FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589C4412A1290FE007489FB /* NetworkManager.swift */; };
 		6589C4442A12914C007489FB /* HelperNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589C4432A12914C007489FB /* HelperNetworkManager.swift */; };
 		6589C4472A1291DE007489FB /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6589C4462A1291DE007489FB /* UIImageView + Extension.swift */; };
+		65A686112A821A1800731DD4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A686102A821A1800731DD4 /* OnboardingViewController.swift */; };
+		65A686132A821A7400731DD4 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A686122A821A7400731DD4 /* OnboardingCell.swift */; };
 		65A705C12A12944D003EDF02 /* HomeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A705C02A12944D003EDF02 /* HomeNetworkManager.swift */; };
 		65A705C32A12948C003EDF02 /* HomeHelperNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A705C22A12948C003EDF02 /* HomeHelperNetworkManager.swift */; };
 		65C2F5242A12365C001E9809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2F5232A12365C001E9809 /* AppDelegate.swift */; };
@@ -73,6 +75,8 @@
 		6589C4412A1290FE007489FB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6589C4432A12914C007489FB /* HelperNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperNetworkManager.swift; sourceTree = "<group>"; };
 		6589C4462A1291DE007489FB /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		65A686102A821A1800731DD4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		65A686122A821A7400731DD4 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		65A705C02A12944D003EDF02 /* HomeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkManager.swift; sourceTree = "<group>"; };
 		65A705C22A12948C003EDF02 /* HomeHelperNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperNetworkManager.swift; sourceTree = "<group>"; };
 		65C2F5202A12365C001E9809 /* Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +205,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		65A6860F2A82198700731DD4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				65A686102A821A1800731DD4 /* OnboardingViewController.swift */,
+				65A686122A821A7400731DD4 /* OnboardingCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		65A705BF2A12943F003EDF02 /* HomeManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +252,7 @@
 				652B10132A18B909005192F6 /* Tags */,
 				6577FDFC2A3041360071E537 /* Search */,
 				6586964E2A1D12810062779F /* Products */,
+				65A6860F2A82198700731DD4 /* Onboarding */,
 				658696552A1D19FE0062779F /* Register */,
 				65C2F5292A12365C001E9809 /* Main.storyboard */,
 				65C2F52F2A12365D001E9809 /* Assets.xcassets */,
@@ -397,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A686132A821A7400731DD4 /* OnboardingCell.swift in Sources */,
 				6589C43D2A128D6F007489FB /* Product.swift in Sources */,
 				6577FE072A3044600071E537 /* SearchHelperManager.swift in Sources */,
 				65E9EECD2A334E3F00B1585B /* ProductSearchViewController.swift in Sources */,
@@ -428,6 +443,7 @@
 				65C2F52E2A12365C001E9809 /* Shop.xcdatamodeld in Sources */,
 				652B101B2A18BF11005192F6 /* TagsViewModel.swift in Sources */,
 				652B10102A167F5C005192F6 /* Categories.swift in Sources */,
+				65A686112A821A1800731DD4 /* OnboardingViewController.swift in Sources */,
 				6576D62F2A2CDD020074A040 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

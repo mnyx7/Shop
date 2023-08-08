@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -505,12 +506,117 @@
             </objects>
             <point key="canvasLocation" x="1120" y="1488"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="Hr0-IA-uRo">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VYE-zY-aBD" customClass="OnboardingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hf6-DH-SAH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SE4-vt-LgF">
+                                <rect key="frame" x="16" y="67" width="361" height="584"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mEY-nk-NQc">
+                                    <size key="itemSize" width="361" height="439"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OnboardingCellCollectionViewCell" id="gRH-ey-LzM" customClass="OnboardingCellCollectionViewCell" customModule="Shop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="439"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PfI-oh-7Px">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="439"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HVo-cD-dhh">
+                                                    <rect key="frame" x="8" y="16" width="345" height="300"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="2TM-5X-Hjk"/>
+                                                        <constraint firstAttribute="width" constant="300" id="7z7-cp-wNQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bytyki" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocS-Bn-OWX">
+                                                    <rect key="frame" x="16" y="340" width="329" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to out app!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-82-Kyw">
+                                                    <rect key="frame" x="16" y="393" width="329" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HVo-cD-dhh" firstAttribute="top" secondItem="PfI-oh-7Px" secondAttribute="top" constant="16" id="6rp-M2-QnF"/>
+                                                <constraint firstItem="9j0-82-Kyw" firstAttribute="trailing" secondItem="ocS-Bn-OWX" secondAttribute="trailing" id="Dbn-Fm-Kqp"/>
+                                                <constraint firstItem="9j0-82-Kyw" firstAttribute="top" secondItem="ocS-Bn-OWX" secondAttribute="bottom" constant="17" id="EOm-Tl-n5D"/>
+                                                <constraint firstItem="ocS-Bn-OWX" firstAttribute="top" secondItem="HVo-cD-dhh" secondAttribute="bottom" constant="24" id="FpP-cM-Px9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ocS-Bn-OWX" secondAttribute="trailing" constant="16" id="MCl-6J-Np0"/>
+                                                <constraint firstItem="HVo-cD-dhh" firstAttribute="leading" secondItem="PfI-oh-7Px" secondAttribute="leading" constant="8" id="NjP-hg-Kbh"/>
+                                                <constraint firstItem="9j0-82-Kyw" firstAttribute="leading" secondItem="ocS-Bn-OWX" secondAttribute="leading" id="en9-mP-RR9"/>
+                                                <constraint firstAttribute="trailing" secondItem="HVo-cD-dhh" secondAttribute="trailing" constant="8" id="g8p-CY-B3l"/>
+                                                <constraint firstItem="ocS-Bn-OWX" firstAttribute="leading" secondItem="PfI-oh-7Px" secondAttribute="leading" constant="16" id="onh-Nw-a4Q"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="361" height="439"/>
+                                        <connections>
+                                            <outlet property="imgSlider" destination="HVo-cD-dhh" id="1v5-9I-UPt"/>
+                                            <outlet property="textSlider" destination="9j0-82-Kyw" id="3Dd-Um-CY5"/>
+                                            <outlet property="titleSlider" destination="ocS-Bn-OWX" id="e05-pX-v21"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="VYE-zY-aBD" id="0jy-wv-FaF"/>
+                                    <outlet property="delegate" destination="VYE-zY-aBD" id="A7K-b8-dAn"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OXq-iR-koz">
+                                <rect key="frame" x="138" y="666" width="115.66666666666669" height="26"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" name="AccentColor"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLT-r3-8VZ">
+                                <rect key="frame" x="167.33333333333334" y="716" width="57" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Skip"/>
+                                <connections>
+                                    <action selector="skipSlides:" destination="VYE-zY-aBD" eventType="touchUpInside" id="wgi-F7-7uz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="13m-Mh-UMM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OXq-iR-koz" firstAttribute="centerX" secondItem="hLT-r3-8VZ" secondAttribute="centerX" id="3VY-Tn-Hl6"/>
+                            <constraint firstItem="SE4-vt-LgF" firstAttribute="top" secondItem="13m-Mh-UMM" secondAttribute="top" constant="8" id="7SU-Ht-fsx"/>
+                            <constraint firstItem="13m-Mh-UMM" firstAttribute="bottom" secondItem="SE4-vt-LgF" secondAttribute="bottom" constant="167" id="B8b-42-CwE"/>
+                            <constraint firstItem="13m-Mh-UMM" firstAttribute="trailing" secondItem="SE4-vt-LgF" secondAttribute="trailing" constant="16" id="N1v-oe-h9z"/>
+                            <constraint firstItem="SE4-vt-LgF" firstAttribute="leading" secondItem="13m-Mh-UMM" secondAttribute="leading" constant="16" id="Rhp-hb-4qE"/>
+                            <constraint firstItem="OXq-iR-koz" firstAttribute="leading" secondItem="13m-Mh-UMM" secondAttribute="leading" constant="138" id="aAc-x4-Y8q"/>
+                            <constraint firstItem="OXq-iR-koz" firstAttribute="top" secondItem="SE4-vt-LgF" secondAttribute="bottom" constant="15" id="b5m-Ea-abK"/>
+                            <constraint firstItem="hLT-r3-8VZ" firstAttribute="top" secondItem="OXq-iR-koz" secondAttribute="bottom" constant="24" id="uHs-NY-7mK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLP-9s-vqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="-746"/>
+        </scene>
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="percent" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="facebook">
             <color red="0.066666666666666666" green="0.47058823529411764" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
