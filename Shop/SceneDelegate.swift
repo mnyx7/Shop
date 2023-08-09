@@ -18,13 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        if UserDefaults.standard.bool(forKey: "onboarded"){
+        if UserDefaults.standard.bool(forKey: "onboarded") {
             setOnboardingRootController(windowScene: windowScene)
-        } else{
-            
+        } else {
+
         }
-        
     }
+    
     func setOnboardingRootController(windowScene: UIWindowScene) {
         if window == nil{
              window = UIWindow(windowScene: windowScene)

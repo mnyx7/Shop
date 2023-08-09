@@ -8,19 +8,27 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
-//    @IBAction func registerApple(_ sender: Any) {
-//    }
-//    
-//    @IBAction func registerGoogle(_ sender: Any) {
-//    }
-//    @IBAction func registerFacebook(_ sender: Any) {
-//    }
+    var viewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       // viewModel.loginAdapter = LoginAdapter(controller: self)
     }
+    
+    @IBAction func appleSignup(_ sender: Any) {
+        viewModel.login(type: .apple)
+
+    }
+    
+    @IBAction func googleSignup(_ sender: Any) {
+        viewModel.login(type: .google)
+
+    }
+    @IBAction func facebookSignup(_ sender: Any) {
+        viewModel.login(type: .facebook)
+
+    }
+
     
 
     /*

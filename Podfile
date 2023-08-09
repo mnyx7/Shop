@@ -7,5 +7,7 @@ target 'Shop' do
 
 pod 'Alamofire'
 pod 'SDWebImage'
+pod 'GoogleSignIn'
+
 
 end

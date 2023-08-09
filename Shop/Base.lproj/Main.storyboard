@@ -260,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="2059" y="1487"/>
         </scene>
-        <!--Login View Controller.swift-->
+        <!--Login View Controller-->
         <scene sceneID="za2-Iv-evw">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController.swift" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8AH-SB-1qr" customClass="LoginViewController.swift" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8AH-SB-1qr" customClass="LoginViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qrq-yR-RF4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,17 +288,11 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Sign in">
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="signIn:" destination="8AH-SB-1qr" eventType="touchUpInside" id="kFW-Mr-PFM"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGy-6m-aUK">
                                         <rect key="frame" x="0.0" y="189" width="345" height="66.333333333333314"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot password?"/>
-                                        <connections>
-                                            <action selector="forgotPassword:" destination="8AH-SB-1qr" eventType="touchUpInside" id="LLp-Bx-3Y1"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -321,7 +315,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signUp:" destination="8AH-SB-1qr" eventType="touchUpInside" id="PVE-R5-kIV"/>
+                                    <action selector="signUp:" destination="8AH-SB-1qr" eventType="touchUpInside" id="XHL-GB-JvV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -438,7 +432,7 @@
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="registerApple:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="9ax-Kf-iY1"/>
+                                            <action selector="appleSignup:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="U3t-Yt-1Su"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxi-iB-b8D">
@@ -448,7 +442,7 @@
                                             <color key="baseBackgroundColor" name="gmail"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="registerGoogle:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="Rhq-xZ-MN2"/>
+                                            <action selector="googleSignup:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="icf-S1-Z5e"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVA-Gt-XkB">
@@ -458,7 +452,7 @@
                                             <color key="baseBackgroundColor" name="facebook"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="registerFacebook:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="Tvf-Kv-S38"/>
+                                            <action selector="facebookSignup:" destination="kmL-dZ-Qfy" eventType="touchUpInside" id="1QE-nG-YEU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -473,9 +467,6 @@
                             <constraint firstItem="Sn2-Q6-o65" firstAttribute="trailing" secondItem="cSH-5A-S81" secondAttribute="trailing" constant="8" id="y78-H1-UDw"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="registerApple" destination="Hxi-iB-b8D" id="kZm-KC-BV7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT2-Ht-VX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,7 +26,7 @@ class OnboardingViewController: UIViewController {
  }
     
     func jsonFileRead() {
-        if let jsonFile = Bundle.main.url(forResource: "zooApp", withExtension: "json") {
+        if let jsonFile = Bundle.main.url(forResource: "Onboarding", withExtension: "json") {
             let data = (try? Data(contentsOf: jsonFile))!
             do {
                 slides = try JSONDecoder().decode([OnboardingSlide].self, from: data)
